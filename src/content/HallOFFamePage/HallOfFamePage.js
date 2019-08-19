@@ -19,28 +19,35 @@ const HallOfFamePage = () => {
           </div>
         </div>
         <div className="bx--row">
-          <Tile className="bx--offset-lg-4 bx--col-lg-4 hof-page__banner-tile">
-            <p class="hof-page__banner-text">These folks got one of these...</p>
-            <img
-              className="hof-page__image"
-              src={`${process.env.PUBLIC_URL}/carbon-badge.png`}
-              alt="Carbon developer essentials react badge"
-            />
-          </Tile>
-          <Tile className="bx--col-lg-4 hof-page__banner-tile">
-            <img
-              className="hof-page__image"
-              src={`${process.env.PUBLIC_URL}/carbon-tee.png`}
-              alt="Carbon t-shirt"
-            />
-            <p class="hof-page__banner-text hof-page__right">
-              ...and one of these.
-            </p>
-          </Tile>
+          <div className="bx--offset-lg-4 bx--col-lg-4 ">
+            <Tile className="hof-page__banner-tile">
+              <p className="hof-page__banner-text">
+                These folks got one of these...
+              </p>
+              <img
+                className="hof-page__image"
+                src={`${process.env.PUBLIC_URL}/carbon-badge.png`}
+                alt="Carbon developer essentials react badge"
+              />
+            </Tile>
+          </div>
+          <div className="bx--col-lg-4 ">
+            <Tile className="hof-page__banner-tile">
+              <img
+                className="hof-page__image"
+                src={`${process.env.PUBLIC_URL}/carbon-tee.png`}
+                alt="Carbon t-shirt"
+              />
+              <p className="hof-page__banner-text hof-page__right">
+                ...and one of these.
+              </p>
+            </Tile>
+          </div>
         </div>
         <div className="bx--row">
           <div className="bx--offset-lg-4 bx--col-lg-8">
             <TextInput
+              id="filter-id"
               labelText="Filter"
               value={filter}
               onChange={e => {

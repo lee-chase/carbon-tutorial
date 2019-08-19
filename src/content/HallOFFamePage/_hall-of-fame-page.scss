@@ -11,6 +11,10 @@
   @include carbon--type-style('productive-heading-05');
 }
 
+.hof-page__banner-tile {
+  height: 100%;
+}
+
 .hof-page__content {
   background-color: $ui-02;
 }
