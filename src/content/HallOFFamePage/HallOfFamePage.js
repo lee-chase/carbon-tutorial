@@ -18,8 +18,8 @@ const HallOfFamePage = () => {
           </div>
         </div>
         <div className="bx--row">
-          <Tile className="bx--col-lg-4">
-            <p>These folks got one of these...</p>
+          <Tile className="bx--offset-lg-4 bx--col-lg-4">
+            <p class="hof-page__banner-text">These folks got one of these...</p>
             <img
               className="hof-page__image"
               src={`${process.env.PUBLIC_URL}/carbon-badge.png`}
@@ -32,11 +32,13 @@ const HallOfFamePage = () => {
               src={`${process.env.PUBLIC_URL}/carbon-tee.png`}
               alt="Carbon t-shirt"
             />
-            <p>...and one of these.</p>
+            <p class="hof-page__banner-text hof-page__right">
+              ...and one of these.
+            </p>
           </Tile>
         </div>
         <div className="bx--row">
-          <div className="bx--col-lg-8">
+          <div className="bx--offset-lg-4 bx--col-lg-8">
             <label>
               Filter:
               <input

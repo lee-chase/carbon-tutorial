@@ -1,3 +1,53 @@
+.hof-page__banner {
+  padding-top: $spacing-05;
+  background-color: $ui-01;
+
+  .bx--row {
+    padding-bottom: $spacing-05;
+  }
+}
+
+.hof-page__heading {
+  @include carbon--type-style('productive-heading-05');
+}
+
+.hof-page__content {
+  margin: 0 -2rem;
+  background-color: $ui-02;
+}
+
 .hof-page__image {
   width: 100%;
+}
+
+.hof-page__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hof-page__list-item {
+  width: $spacing-07 * 8;
+  margin-top: $spacing-05;
+}
+
+.hof-page__tile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $ui-01;
+}
+
+.hof-page__tile-image {
+  width: $spacing-09 * 2;
+  height: $spacing-09 * 2;
+  border-radius: 50%;
+}
+
+.hof-page__right {
+  float: right;
+}
+
+.hof-page__banner-text {
+  @include carbon--type-style('productive-heading-03');
 }
