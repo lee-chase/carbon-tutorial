@@ -1,7 +1,7 @@
 import React from 'react';
 import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
-import { Tile } from 'carbon-components-react';
+import { ClickableTile } from 'carbon-components-react';
 
 const HallOfFameList = props => {
   const HOF_QUERY = gql`
@@ -52,9 +52,8 @@ const HallOfFameList = props => {
                   {search.edges.map((edge, index) => {
                     return (
                       <li key={index} className="hof-page__list-item">
-                        <Tile
+                        <ClickableTile
                           className="hof-page__tile"
-                          kind="clickable"
                           href={edge.node.url}>
                           <h2>{edge.node.author.login}</h2>
                           <p>{edge.node.closedAt}</p>
@@ -63,7 +62,7 @@ const HallOfFameList = props => {
                             className="hof-page__tile-image"
                             alt={edge.node.author.login}
                           />
-                        </Tile>
+                        </ClickableTile>
                       </li>
                     );
                   })}
