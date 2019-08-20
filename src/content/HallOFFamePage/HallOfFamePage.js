@@ -3,6 +3,8 @@ import HallOfFameList from './HallOfFameList';
 import { Tile } from 'carbon-components-react';
 import { TextInput } from 'carbon-components-react';
 
+import './_hall-of-fame-page.scss';
+
 const HallOfFamePage = () => {
   const [filter, setFilter] = useState(
     'org:carbon-design-system type:pr is:closed step+5+Hursley'
