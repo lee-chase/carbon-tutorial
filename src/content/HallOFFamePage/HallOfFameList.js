@@ -16,6 +16,7 @@ const HallOfFameList = props => {
               headRefName
               number
               url
+              closedAt
               author {
                 avatarUrl
                 login
@@ -55,8 +56,10 @@ const HallOfFameList = props => {
                         <ClickableTile
                           className="hof-page__tile"
                           href={edge.node.url}>
-                          <h2>{edge.node.author.login}</h2>
-                          <p>{edge.node.closedAt}</p>
+                          <div className="hof-page__tile-left">
+                            <h2>{edge.node.author.login}</h2>
+                            <p>{edge.node.closedAt}</p>
+                          </div>
                           <img
                             src={edge.node.author.avatarUrl}
                             className="hof-page__tile-image"
