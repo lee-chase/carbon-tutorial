@@ -1,7 +1,7 @@
 import React from 'react';
 import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
-import { ClickableTile } from 'carbon-components-react';
+import { Tile, Link } from 'carbon-components-react';
 
 const HallOfFameList = props => {
   const HOF_QUERY = gql`
@@ -53,19 +53,29 @@ const HallOfFameList = props => {
                   {search.edges.map((edge, index) => {
                     return (
                       <li key={index} className="hof-page__list-item">
-                        <ClickableTile
-                          className="hof-page__tile"
-                          href={edge.node.url}>
+                        <Tile className="hof-page__tile">
                           <div className="hof-page__tile-left">
-                            <h2>{edge.node.author.login}</h2>
-                            <p>{edge.node.closedAt}</p>
+                            <Link href={edge.node.author.url}>
+                              <h2
+                                className="hof-page__tile-title"
+                                title={edge.node.author.login}>
+                                {edge.node.author.login}
+                              </h2>
+                            </Link>
+                            <Link href={edge.node.url}>
+                              <p
+                                className="hof-page__tile-sub"
+                                title={`Completed on: ${edge.node.closedAt}`}>
+                                Completed on: {edge.node.closedAt}
+                              </p>
+                            </Link>
                           </div>
                           <img
                             src={edge.node.author.avatarUrl}
                             className="hof-page__tile-image"
                             alt={edge.node.author.login}
                           />
-                        </ClickableTile>
+                        </Tile>
                       </li>
                     );
                   })}

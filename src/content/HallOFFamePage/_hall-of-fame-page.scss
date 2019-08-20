@@ -21,6 +21,10 @@
   background-color: $ui-02;
 }
 
+.hof-page__tile-sub {
+  @include carbon--type-style('body-short-01');
+}
+
 .hof-page__image {
   width: 100%;
 }
@@ -43,8 +47,19 @@
   background-color: $ui-01;
 }
 
+.hof-page__tile-left {
+  max-width: 60%;
+}
+
+.hof-page__tile-title {
+  @include carbon--type-style('productive-heading-02');
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+}
+
 .hof-page__tile-image {
-  width: $spacing-09 * 2;
+  min-width: $spacing-09 * 2;
   height: $spacing-09 * 2;
   border-radius: 50%;
 }
