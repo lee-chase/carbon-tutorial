@@ -51,22 +51,24 @@ const HallOfFameList = props => {
               return (
                 <>
                   {search.edges.map((edge, index) => {
+                    let date = new Date(edge.node.closedAt);
+                    let localeDate = date.toLocaleDateString();
                     return (
                       <li key={index} className="hof-page__list-item">
                         <Tile className="hof-page__tile">
                           <div className="hof-page__tile-left">
-                            <Link href={edge.node.author.url}>
-                              <h2
-                                className="hof-page__tile-title"
-                                title={edge.node.author.login}>
+                            <Link
+                              href={edge.node.author.url}
+                              title={edge.node.author.login}>
+                              <h2 className="hof-page__tile-title">
                                 {edge.node.author.login}
                               </h2>
                             </Link>
-                            <Link href={edge.node.url}>
-                              <p
-                                className="hof-page__tile-sub"
-                                title={`Completed on: ${edge.node.closedAt}`}>
-                                Completed on: {edge.node.closedAt}
+                            <Link
+                              href={edge.node.url}
+                              title={`Completed on: ${localeDate}`}>
+                              <p className="hof-page__tile-sub">
+                                Completed on: {localeDate}
                               </p>
                             </Link>
                           </div>
